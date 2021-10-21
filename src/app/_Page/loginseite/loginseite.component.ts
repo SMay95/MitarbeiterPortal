@@ -22,4 +22,13 @@ export class LoginseiteComponent implements OnInit {
   }
     
   Login(value: any): void{ 
-    console.log(this.Login
+    console.log(this.LoginData.Token);
+    console.log(this.LoginData.Geburtstag);
+  }
+
+  GoBack(){
+    //Routing to the Detailentry
+    this.router.navigate(['/erfassung']);
+  }
+
+}
