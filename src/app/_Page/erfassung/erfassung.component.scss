@@ -1,0 +1,156 @@
+/* input[type='date']:in-range::-webkit-datetime-edit-year-field,input[type='date']:in-range::-webkit-datetime-edit-month-field,input[type='date']:in-range::-webkit-datetime-edit-day-field,input[type='date']:in-range::-webkit-datetime-edit-text{  color: transparent;}
+input[type=date]:focus::-webkit-datetime-edit {
+  color: black !important;
+}
+ */
+
+.peCursor{
+  cursor: pointer; 
+  text-decoration: none;
+  color: #555555;
+}
+
+
+//Registration Bubble on the Bottom
+.Registration{
+  background: #219BE0; 
+  color: #fff; 
+  border: none;
+  border-radius: 50%; 
+  width: 150px; 
+  height: 150px;
+
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%) translateY(50%);
+
+  span{  
+      position: absolute; 
+      top: 25%; 
+      left: 0; 
+      right: 0;
+      transform: translateY(-25%);
+      font-size: 18px;
+
+      .smallHintText{
+        font-size: 8px;
+      }
+  }
+}
+
+
+.LoginDesktop{
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, .2), 0 10px 10px rgba(0, 0, 0, .2);
+  width: 1000px;
+  height: 600px;
+  margin: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .LoginDesktop{
+    border-radius: 0;
+    box-shadow: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    
+  }
+}
+.mat-checkbox-layout { white-space: normal !important; }
+
+.Login-Container{
+  
+    
+  background: #fff;
+  overflow: hidden;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+
+  .LoginContent {
+    color: #421311;
+    box-sizing: border-box;
+    height: 100%;
+    float: left;
+  }
+
+  .LoginLeft{
+    padding: 10px;
+    
+    .stepperBox{
+      overflow-y:scroll;
+      height: 80%;
+      .stepper{
+        min-height: fit-content;
+      }
+    }
+    
+    
+    .LoginMenue{
+      list-style-type: none;
+      text-align:right;
+      li{
+        padding-left: 5px;
+        display: inline;
+        cursor: pointer;
+      }
+      a{
+        text-decoration: none; 
+        color: #555555;
+    }
+    }
+  }
+
+  
+  .LoginRight{
+   
+    background-position: center center;
+    background-size: cover;
+    border-radius: 30px 0 0 0;
+    overflow: hidden;
+    div{ 
+      position: absolute;
+      top: 50%; bottom:0; left:50%; right: 0;
+      height: 450px;
+      padding:  0px 30px;
+      transform:  translateY(-50%);
+    }
+    img{ 
+        position: absolute;
+        top: 50%; bottom:0; left:50%; right: 0;
+        height: 400px;
+        transform:  translateY(-50%);
+    }
+  }
+}
+
+
+.InfotextErklaerung{
+  font-size: 8px;
+  line-height: 9px;
+  color: #555555;
+}
+
+.SubText{
+  font-size: 10px; 
+  color: #555555;
+}
+
+
+// adds breaks to the mat-checkboxes with long labels
+::ng-deep .mat-checkbox-layout {
+  white-space: normal !important;
+}
+
+// rather than center the checkbox, put the checkbox in the first line
+::ng-deep .mat-checkbox-inner-container {
+  margin-top: 3px !important;
+}

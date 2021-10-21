@@ -1,0 +1,44 @@
+<div class="Login-Container LoginDesktop m-auto">
+<div class="LoginContent">
+    <!--Login Menü-->
+    <div class="row">
+        <div class="col">
+            <img src="../../../assets/DiakonieMiteinandern.png" height="35px">
+        </div>
+        <ul class="col ms-auto me-0 LoginMenue">
+            <li><a href="/erfassung">Zurück</a></li>
+            <li><a href="/hilfe">Hilfe</a></li>
+        </ul>
+    </div>
+    <h2 class="text-primary text-center mb-1">Corona Impf-/Genesenstatus</h2>
+    <div class="text-center">
+        <span>Möchte Sie sich Anmelden?<br/>Geben Sie ihre Nutzerkennung und ihr Geburtsdatum ein.</span>
+    </div>  
+    
+    <div class="d-flex flex-wrap mt-4">
+        <form novalidate class="w-50 mx-auto" (ngSubmit)="Login(formLogin.value)" #formLogin="ngForm">
+            <mat-form-field class="w-100 mx-auto my-2 pe-1">
+                <mat-label>Nutzerkennung</mat-label>
+                <input matInput type="text" name="LoginToken" #LoginToken="ngModel" placeholder="z.B.: HR67TG" [(ngModel)] ="LoginData.Token" required>
+                <mat-error>
+                    Bitte geben Sie Ihren Token ein.
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="w-100 mx-auto my-2  pe-1">
+                <mat-label>Geburtsdatum</mat-label>
+                <input matInput type="date" name="LoginGeburtstag" #LoginGeburtstag="ngModel" [(ngModel)] ="LoginData.Geburtstag" required>
+                <mat-error>
+                    Bitte geben Sie ihr Geburtsdatum an.
+                </mat-error>
+            </mat-form-field>
+        
+            <div class="row gx-2 align-center">
+                <div class="col-md-6 col-12">
+                    <button type="button" class="btn btn-secondary my-2 w-100" (click)="GoBack()">Abbrechen</button>
+                </div>
+                <div class="col-md-6 col-12">
+                    <button type="submit" class="btn btn-primary my-2 w-100">Login</button>
+                </div>
+            </div>
+        </form> 
+    </

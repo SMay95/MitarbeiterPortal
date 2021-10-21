@@ -1,0 +1,13 @@
+<div *ngIf="CovStat" class="Status2G row" [ngClass]=CovStat.StyleKlasse > 
+    <div class="col-2 Status2GIcon" [ngSwitch]="CovStat.StatusNr">
+        <mat-icon *ngSwitchCase=1>verified_user</mat-icon>
+        <mat-icon *ngSwitchCase=2>verified_user</mat-icon>
+        <mat-icon *ngSwitchCase=3>policy</mat-icon>
+        <mat-icon *ngSwitchCase=4>gpp_bad</mat-icon>
+        <mat-icon *ngSwitchDefault>error</mat-icon>
+    </div>
+    <div class="col-10 column">
+        <div class="titel">{{CovStat.Titel}}</div>
+        <div class="information">{{CovStat.GueltigBis}}</div>
+    </div>
+</div>

@@ -1,0 +1,160 @@
+<div class="Login-Container LoginDesktop m-auto">
+    <div class="LoginContent  LoginLeft col-md-6 col-12">
+        <!--Login Menü-->
+        <div class="row">
+            <div class="col">
+                <img src="../../../assets/DiakonieMiteinandern.png" height="35px">
+            </div>
+            <ul class="col ms-auto me-0 LoginMenue">
+                <li><a href="/hilfe">Hilfe</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+        </div>
+        <h2 class="text-primary text-center mb-1">Corona Impf-/Genesenstatus</h2>
+        <div class="text-center">
+            <span>Vielen Dank,<br> dass Sie an der Datenerhebung zum 2G-Coronastatus teilnehmen.</span>
+        </div>          
+<div class="stepperBox">
+
+        <!--Registration a new User-->
+        <mat-stepper class="stepper" linear   #stepper orientation="vertical" >
+            <mat-step [stepControl]="StammDatenGroup" >
+                <form [formGroup]="StammDatenGroup" >
+                    <ng-template matStepLabel>Stammdaten</ng-template>
+                    <div class="d-flex flex-row mb-1 px-4">
+                    <mat-form-field class="col-6 pe-1">
+                        <input matInput type="text" placeholder="Vorname" formControlName="Vorname" #Vorname required>
+                        <mat-error>
+                            Bitte geben Sie Ihren Vorname an.
+                        </mat-error>
+                    </mat-form-field>
+        
+                    <mat-form-field class="col-6">
+                        <input matInput type="text" placeholder="Nachname" formControlName="Nachname" #Nachname required>
+                        <mat-error>
+                            Bitte geben Sie Ihren Nachnamen an.
+                        </mat-error>
+                    </mat-form-field>
+                    </div>
+        
+                    <mat-form-field class="w-100 px-4 mb-1">
+                        <input matInput type="text" placeholder="E-Mail" formControlName="EMail" #EMail required>
+                        <mat-error>
+                            Bitte geben Sie eine gültige E-Mail an.
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="w-100 px-4 mb-1">
+                        <input matInput type="text" placeholder="Geburtstag" formControlName="Geburtstag" onfocus="(this.type='date')" #Geburtstag required>
+                        <mat-error>
+                            Bitte geben Sie ihr Gerburtsdatum an.
+                        </mat-error>
+                    </mat-form-field>
+
+             
+        
+                    <div class="text-center">
+                        <button mat-button (click)="StepForward(stepper)">Weiter</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="GenesenGroup">
+                <form [formGroup]="GenesenGroup">
+                    <ng-template matStepLabel>Genesen</ng-template>
+                    <div class="text-left d-flex flex-row">
+                        <span class="col-6">Sind Sie Genesen?</span>
+                        <mat-radio-group class="ms-auto me-0" aria-label="Genesen" type="radio" formControlName="bGenesen">
+                            <mat-radio-button [value]=true>Ja</mat-radio-button>
+                            <mat-radio-button class="ms-2" [value]=false>Nein</mat-radio-button>
+                        </mat-radio-group>
+                    </div> 
+                    <hr>  
+                    <span class="SubText mb-1">Ich habe einen Nachweis über meine Genesen erhalten:</span>
+                    <div class="text-left d-flex flex-row justify-content-center">
+                        <div class="col-6 align-bottom">
+                            <span>Genesen</span>
+                        </div>
+                        
+                        <mat-form-field class="col-6 pe-1">
+                                <input matInput type="date" formControlName="DTGenesen" placeholder="Datum" #Genesen>
+                        </mat-form-field>
+                    </div> 
+                    <div class="text-center">
+                      <button mat-button (click)="StepBack(stepper)">Zurück</button>
+                      <button mat-button (click)="StepForward(stepper)">Weiter</button>
+                    </div>
+                  </form>
+            </mat-step>
+            <mat-step [stepControl]="ImpfungGroup">
+                <form [formGroup]="ImpfungGroup">
+                    <ng-template matStepLabel>Impfung</ng-template>
+                    <div class="text-left d-flex flex-row">
+                        <span class="col-6">Sind sie geimpft? </span>
+                        <mat-radio-group class="ms-auto me-0" aria-label="Genesen" formControlName="bGeimpft">
+                            <mat-radio-button [value]=true>Ja</mat-radio-button>
+                            <mat-radio-button class="ms-2" [value]=false>Nein</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                    <hr>
+                    <span class="SubText mb-1">Folgende Impfungen habe ich erhalten: </span>
+                    <div class="text-left d-flex flex-row">
+                        <div class="col-6 d-flex flex-column">
+                            <span>einfach Impfung</span>
+                            <span class="col-12 InfotextErklaerung">Impfung 1 von 1</span>
+                        </div>
+
+                        <mat-form-field class="col-6 pe-1">
+                            <input matInput type="date" formControlName="DTeinfachImpfung" placeholder="Datum" #einfachImpfung>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="text-left d-flex flex-row">
+                        <div class="col-6 d-flex flex-column">
+                            <span>zweifach Impfung</span>
+                            <span class="InfotextErklaerung">Impfung 1 von 2</span>
+                        </div>
+                        <mat-form-field class="col-6 pe-1">
+                                <input matInput type="date" formControlName="DTzweifachImpfung1" placeholder="Datum" #zweifachImpfung1>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="text-left d-flex flex-row">
+                        <div class="col-6 d-flex flex-column">
+                            <span>zweifach Impfung</span>
+                            <span class="InfotextErklaerung">Impfung 2 von 2</span>
+                        </div>
+                        <mat-form-field class="col-6 pe-1">
+                                <input matInput type="date" formControlName="DTzweifachImpfung2" placeholder="Datum" #zweifachImpfung2>
+                        </mat-form-field>
+                    </div>
+                    <div class="text-center">
+                      <button mat-button (click)="StepBack(stepper)">Zurück</button>
+                      <button mat-button (click)="StepForward(stepper)">Weiter</button>
+                    </div>
+                  </form>
+            </mat-step>
+            <mat-step  [stepControl]="AbschlussGroup" >
+                <ng-template matStepLabel>Abschluss</ng-template>
+                <form [formGroup]="AbschlussGroup">
+                   
+                    <app-zusammenfassung [dataService]="_DataService"></app-zusammenfassung>
+                    <mat-checkbox class=" m-auto" formControlName="bAbschluss">Ich versichere hiermit, dass die vorstehenden Angaben vollständig sind und der Wahrheit entsprechen. </mat-checkbox>
+
+                    <div class="text-center">
+                        <button mat-button (click)="StepBack(stepper)">Zurück</button>
+                        <button mat-button color=primary (click)="submitAll()" matStepperNext>Abschließen</button>
+                    </div>
+                </form>
+            </mat-step>
+        </mat-stepper>
+
+
+    </div>
+    <div class="LoginContent LoginRight col-md-6 col-12 d-none d-md-block" [ngSwitch]="this.stepper.selectedIndex">
+            <img *ngSwitchCase=1 src="../../../assets/LoginImage2.png"> 
+            <img *ngSwitchCase=2 src="../../../assets/LoginImage3.png"> 
+            <img *ngSwitchCase=3 src="../../../assets/LoginImage4.png"> 
+            <img *ngSwitchDefault src="../../../assets/LoginImage.png"> 
+    </div>
+</div>
+

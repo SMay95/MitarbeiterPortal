@@ -1,0 +1,42 @@
+<div class="CovSummary" *ngIf="Cov2G$">
+
+    <h2>{{Cov2G$.Vorname}} {{Cov2G$.Nachname}}</h2>
+    <div class="h3">Persönliche Daten</div>
+        <div class="EntryBox">
+            <div class="label">Name, Vorname</div>
+            <div class="information">{{Cov2G$.Nachname}}, {{Cov2G$.Vorname}}</div>
+        </div>
+
+        <div class="EntryBox">
+            <div class="label">E-Mail</div>
+            <div class="information">{{Cov2G$.EMail}}</div>
+        </div>
+
+        <div class="EntryBox">
+            <div class="label">Geburtsdatum</div>
+            <div class="information">{{Cov2G$.Geburtstag| date}} </div>
+        </div>
+
+    <div class="h3">Genesen</div>
+        <div class="EntryBox">
+            <div class="label">Genesennachweis</div>
+            <div class="information">{{Cov2G$.DTGenesen ? "Genesen am " + (Cov2G$.DTGenesen | date: 'mediumDate') : "----"}}</div>
+        </div>
+    <div class="h3">Geimpft</div>
+        <div class="EntryBox">
+            <div class="label">einfach Impfung</div>
+            <div class="information">{{Cov2G$.DTeinfachImpfung ? "Geimpft am " + (Cov2G$.DTeinfachImpfung | date: 'mediumDate') : "----"}}</div>
+        </div>
+
+        <div class="EntryBox">
+            <div class="label">zweifach Impfung</div>
+            <div class="information">{{Cov2G$.DTzweifachImpfung1 ? "Geimpft am " + (Cov2G$.DTzweifachImpfung1 | date: 'mediumDate') : "----"}}</div>
+        </div>
+
+        <div class="EntryBox">
+            <div class="label">zweifach Impfung</div>
+            <div class="information">{{Cov2G$.DTzweifachImpfung2 ? "Geimpft am " + (Cov2G$.DTzweifachImpfung2 | date: 'mediumDate') : "----"}}</div>
+        </div>
+        
+        <app-impfgenesenstatus [dataService]="dataService" (change)="test()" ></app-impfgenesenstatus>
+</div> 

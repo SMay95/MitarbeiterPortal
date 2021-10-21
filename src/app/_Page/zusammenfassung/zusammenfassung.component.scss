@@ -1,0 +1,45 @@
+.CovSummary{
+    overflow:hidden;
+    border-radius: 25px;
+    margin: 10px;
+    padding: 0;  
+    background-color: #fdf3f3;
+    max-width: 500px;
+
+    h2{
+        padding-top:10px;
+        padding-left: 10px;
+    }
+
+    .h3{
+        margin-top: 15px;
+        margin-bottom: 4px;
+        padding-left: 10px;
+        color: #141414;
+        font-size: 13px;
+        font-weight: bold;
+        vertical-align: bottom;
+    }  
+
+    .EntryBox{
+        background-color: #FFFFFF;
+        border-top: 1px solid #eaeaea;
+        border-bottom: 1px solid #eaeaea;
+        padding-left: 20px;
+        
+        .label{
+            color: #141414;
+            font-weight: bold;
+            font-size: 9px;
+            width: 100%!important;
+        }
+
+        .information{
+            color: #555555;
+            font-size: 11px;
+            width: 100%!important;
+        }
+    }
+
+   
+}

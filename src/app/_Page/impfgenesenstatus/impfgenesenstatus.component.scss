@@ -1,0 +1,40 @@
+
+    .Status2G{ 
+        width: 120%;
+        position: relative;
+        bottom: 0;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        color: #FFFFFF;
+
+        .Status2GIcon{ 
+            text-align: center;
+
+            mat-icon{
+                height: 32px; 
+                width: 32px;
+                font-size: 32px;
+            }
+        }
+
+
+       .titel{
+            font-size: 16px; 
+            font-weight: bolder;
+       }
+       .information {
+           font-size: 10px;
+       }
+    }
+
+    .StatusGruen{
+        background-color: #2EA95C;
+    }
+
+    .StatusGelb{
+        background-color: #D3910D;
+    }
+
+    .StatusRot{
+        background-color: #D33C0D;
+    }
